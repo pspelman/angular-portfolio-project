@@ -8,7 +8,7 @@ import {ProjectsComponent} from "./projects/projects.component";
 const routes: Routes = [
   {path:'resume', component: ResumeComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'projectPage', component: ProjectsComponent},
+  {path: 'projectsPage', component: ProjectsComponent},
   {path: '', component: HomeComponent}
 ];
 
@@ -16,4 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class RoutingModule { }

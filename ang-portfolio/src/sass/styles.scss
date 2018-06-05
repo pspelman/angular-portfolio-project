@@ -57,13 +57,21 @@ $max-width: 1000px;
   margin-right: auto;
 }
 
+@mixin mountainBackdrop {
+  //background:
+    //linear-gradient($color-bg-light, $color-bg),
+    //url('../app/img/bg.jpg') no-repeat;
+    //url('../app/img/mtnfilter.JPG') no-repeat;
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
 
 /* BASE ------------------------------------------- */
 
 * {
   box-sizing: border-box;
 }
-
 
 body {
   color: $color-text;
@@ -72,6 +80,40 @@ body {
   font-family: $font-stack-primary;
   text-align: center;
   margin: 0;
+
+  .projectsPage {
+    border: 2px solid red;
+    @include mountainBackdrop;
+    background-blend-mode: hard-light;
+  }
+
+}
+
+body, html {
+  height: 100%;
+  background-color: black;
+
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../app/img/mtnraw.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
 }
 
 h1,
@@ -103,14 +145,11 @@ a {
 }
 
 
+
 /* HEADER & FOOTER -------------------------------- */
 
 header {
   height: 460px;
-  background: linear-gradient($color-bg-light, $color-bg),
-  url('../app/img/bg.jpg') no-repeat;
-  background-blend-mode: multiply;
-  background-size: cover;
 
   h1 {
     color: $white;
@@ -122,14 +161,33 @@ header {
     color: $color-accent;
     font-size: 1.25em;
   }
+  @include skewed;
+  @include mountainBackdrop;
+
+}
+
+footer {
+  padding: 2em 0 0;
+  height: 100px;
+  background-color: $color-shade;
+  margin-top: 2.5em;
+  position: relative;
+  @include skewed;
 
 }
 
 
 
 
+//
+.card {
+  @include center;
+  width: 350px;
 
-
+}
+//
+//
+//
 
 
 

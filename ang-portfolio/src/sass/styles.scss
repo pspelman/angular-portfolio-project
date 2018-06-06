@@ -30,6 +30,8 @@ $font-stack-secondary: 'Bree Serif', serif;
 
 $max-width: 1000px;
 
+$min-width: 200px;
+
 // =========================================
 //  Mixins
 // =========================================
@@ -81,11 +83,11 @@ body {
   text-align: center;
   margin: 0;
 
-  .projectsPage {
-    border: 2px solid red;
-    @include mountainBackdrop;
-    background-blend-mode: hard-light;
-  }
+  //.projectsPage {
+  //  @include mountainBackdrop;
+  //  border: 2px solid red;
+  //  background-blend-mode: hard-light;
+  //}
 
 }
 
@@ -95,18 +97,48 @@ body, html {
 
 }
 
+//.parallax {
+//  /* The image used */
+//  //background-image: url("../app/img/mtnraw.jpg");
+//
+//  /* Full height */
+//  height: 100%;
+//
+//  /* Create the parallax scrolling effect */
+//  //background-attachment: fixed;
+//  background-attachment: scroll;
+//  background-position: center;
+//  background-repeat: repeat;
+//  background-size: cover;
+//}
+
+
+
+
 .parallax {
-  /* The image used */
-  background-image: url("../app/img/mtnraw.jpg");
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #00B7FF;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #a7ff81;
 
-  /* Full height */
-  height: 100%;
+}
+.parallax__layer--base {
+  transform: translateZ(0);
+  background-color: #63aeff;
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: repeat;
-  background-size: cover;
+}
+.parallax__layer--back {
+  transform: translateZ(-1px) scale(2);
+  //transform: translateZ(-2px) scale(3);
 }
 
 
@@ -176,8 +208,10 @@ footer {
 
 }
 
-
-
+app-navbar {
+  position: sticky;
+  background-color: transparent;
+}
 
 //
 .card {

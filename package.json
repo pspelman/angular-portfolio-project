@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "watch:sass": "node-sass ang-portfolio/src/sass/styles.scss ang-portfolio/src/sass/styles.css -w",
+    "compile:sass": "node-sass client/src/sass/main.scss client/src/sass/styles.comp.css",
+    "concat:css": "concat -o client/src/sass/styles.concat.css client/src/sass/icon-font.css client/src/sass/styles.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' client/src/sass/styles.concat.css -o client/src/sass/styles.prefix.css",
+    "compress:css": "node-sass client/src/sass/styles.prefix.css client/src/sass/styles.min.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
   },
   "dependencies": {
     "body-parser": "latest",

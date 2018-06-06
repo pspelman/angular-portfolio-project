@@ -1,1 +1,9 @@
+@import "../../sass/styles";
 
+
+.profile__self-description {
+  //width: 20vw;
+  @include center;
+
+
+}

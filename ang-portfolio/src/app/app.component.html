@@ -1,7 +1,20 @@
 <div class="parallax">
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-  <!--<footer>-->
-    <!--<span>©2018 PhilVR, The Phil</span>-->
-  <!--</footer>-->
+  <div class="parallax__layer parallax__layer--back">
+
+  </div>
+  <div class="parallax__layer parallax__layer--base">
+
+    <app-navbar></app-navbar>
+
+    <router-outlet></router-outlet>
+    <div>contact me:
+      <button class="linkedin btn-outline-light">LinkedIn</button>
+      <button class="github btn-outline-light">GitHub</button>
+      <button class="researchgate btn-outline-light">ResearchGate</button>
+    </div>
+  </div>
+
 </div>
+
+
+

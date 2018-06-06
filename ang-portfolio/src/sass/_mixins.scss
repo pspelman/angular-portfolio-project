@@ -1,0 +1,38 @@
+// =========================================
+//  Mixins
+// =========================================
+
+$max-width: 90%;
+
+
+// Slanted effect
+@mixin skewed {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    transform: skewY(-4deg);
+    transform: skewX(-2deg);
+    @content;
+  }
+}
+
+// Center containers
+@mixin center {
+  width: 90%;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin mountainBackdrop {
+  background:
+    //linear-gradient($color-bg-light, $color-bg),
+    //url('../app/img/bg.jpg') no-repeat;
+    url('../assets/images/mtnfilter.JPG') no-repeat;
+  background-blend-mode: multiply;
+  background-size: cover;
+}

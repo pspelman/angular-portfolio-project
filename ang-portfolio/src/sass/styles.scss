@@ -7,10 +7,7 @@
 @import "../../../node_modules/bootstrap/scss/reboot";
 @import "../../../node_modules/bootstrap/scss/type";
 @import "../../../node_modules/bootstrap/scss/tables";
-
-
-
-
+@import "_mixins";
 
 // VARIABLES ------------------------------------ /
 
@@ -21,7 +18,7 @@ $color-secondary: #b13c69;
 $color-accent: #eeea72;
 $color-shade: #eee;
 
-$color-text: #343434;
+$color-text: #99d2c9;
 $color-bg: #3acec2;
 $color-bg-light: #009fe1;
 
@@ -32,41 +29,6 @@ $max-width: 1000px;
 
 $min-width: 200px;
 
-// =========================================
-//  Mixins
-// =========================================
-
-// Slanted effect
-@mixin skewed {
-  position: relative;
-  &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    transform: skewY(-4deg);
-    transform: skewX(-2deg);
-    @content;
-  }
-}
-
-// Center containers
-@mixin center {
-  width: 90%;
-  max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@mixin mountainBackdrop {
-  //background:
-    //linear-gradient($color-bg-light, $color-bg),
-    //url('../app/img/bg.jpg') no-repeat;
-    //url('../app/img/mtnfilter.JPG') no-repeat;
-  background-blend-mode: multiply;
-  background-size: cover;
-}
 
 
 /* BASE ------------------------------------------- */
@@ -99,19 +61,19 @@ body, html {
 
 //.parallax {
 //  /* The image used */
-//  //background-image: url("../app/img/mtnraw.jpg");
+//  background-image: url('../assets/images/mtnraw.jpg');
 //
 //  /* Full height */
 //  height: 100%;
 //
 //  /* Create the parallax scrolling effect */
 //  //background-attachment: fixed;
-//  background-attachment: scroll;
+//  background-attachment: inherit;
 //  background-position: center;
 //  background-repeat: repeat;
 //  background-size: cover;
 //}
-
+//
 
 
 
@@ -120,7 +82,8 @@ body, html {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #00B7FF;
+  background-color: rgba(82, 72, 71, 0.8);
+
 }
 .parallax__layer {
   position: absolute;
@@ -128,18 +91,29 @@ body, html {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #a7ff81;
+  background-color: #394d4f;
+  background-image: url('../assets/images/IMG_0315.JPG');
 
 }
 .parallax__layer--base {
   transform: translateZ(0);
-  background-color: #63aeff;
+  background-image: url('../assets/images/mtnfilter.JPG');
+  background-position: center;
+
+
+  //background-color: #63aeff;
 
 }
 .parallax__layer--back {
-  transform: translateZ(-1px) scale(2);
+  transform: translateZ(-1px) scale(2.5);
   //transform: translateZ(-2px) scale(3);
+  background-image: url('../assets/images/IMG_0315.JPG');
+
 }
+
+
+
+
 
 
 @media only screen and (max-device-width: 1366px) {
@@ -194,7 +168,7 @@ header {
     font-size: 1.25em;
   }
   @include skewed;
-  @include mountainBackdrop;
+  //@include mountainBackdrop;
 
 }
 

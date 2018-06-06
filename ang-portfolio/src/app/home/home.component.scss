@@ -1,9 +1,8 @@
-@import "../../sass/styles";
+@import "../../sass/mixins";
 
 
 .profile__self-description {
-  //width: 20vw;
   @include center;
-
+  width: 50vw;
 
 }

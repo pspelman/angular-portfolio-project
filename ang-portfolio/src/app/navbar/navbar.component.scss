@@ -3,3 +3,47 @@
 .social-media .nav-pills {
   display: inline-block;
 }
+
+
+.nav__topnav {
+  position: absolute;
+  border: 2px solid dodgerblue;
+  background-color: transparent;
+  left: 50%;
+  width: content-box;
+}
+
+
+/* Style the navbar */
+#nav__topnav {
+  overflow: hidden;
+  background-color: rgba(0, 0, 37, 0.38);
+}
+
+/* Navbar links */
+#nav__topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the nav__topnav with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+

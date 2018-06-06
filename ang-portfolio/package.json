@@ -24,7 +24,8 @@
     "core-js": "^2.5.4",
     "node-sass": "^4.9.0",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "jquery": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.6",
@@ -33,6 +34,7 @@
     "@angular/language-service": "^6.0.3",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jquery": "^3.3.2",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
     "jasmine-core": "~2.99.1",
